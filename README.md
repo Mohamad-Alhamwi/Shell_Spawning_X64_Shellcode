@@ -13,3 +13,23 @@ This repository is intended for educational purposes only. Use of the code conta
 
 ## Documentation
 
+This repository contains two different approaches for using the provided shellcode, depending on whether you want to work with a commented assembly file or embed the shellcode directly in Python.
+
+### 1. Using the Commented Shellcode
+
+If you wish to work with the commented assembly code, you will need to use the script `script_as.py`. This script relies on external tools for assembling and compiling the shellcode. Please ensure that the following tools are installed on your system:
+
+- **as**: The GNU Assembler, used to assemble the `.s` file into an object file.
+- **objcopy**: A tool from GNU Binutils, used to extract the shellcode from the object file into raw binary format.
+
+#### Usage
+
+- Run `python3 script_as.py`
+
+### 2. Using the Embeded Shellcode in Python
+
+If you prefer to work with the shellcode embedded directly within Python, you only need the `spawn.py` file. This script uses the `pwntools` library to assemble the shellcode and execute it within a process.
+
+#### Usage
+
+- Run `python3 spawn.py`
