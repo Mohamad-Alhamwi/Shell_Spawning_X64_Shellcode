@@ -1,6 +1,6 @@
 # X64 Linux Shellcode for Spawning /bin/sh with Privilege Retention
 
-This repository contains an x64 Linux shellcode designed to spawn a `/bin/sh` shell with the `-p` option enabled, preserving the effective user ID (EUID). Unlike typical shellcode optimized for minimal size, this code does not prioritize size reduction and contains two null bytes.
+This repository contains an x64 Linux shellcode designed to spawn a `/bin/sh` shell with the `-p` option enabled, preserving the effective user ID (EUID). The shellcode is 44 bytes in length and is entirely null byte-free. Unlike typical shellcode optimized for minimal size, this code does not prioritize size reduction. While it could be further refined to reduce its size, achieving maximum size efficiency is not the primary goal of this implementation.
 
 ## Key Features
 - Shellcode that spawns a `/bin/sh` shell.
