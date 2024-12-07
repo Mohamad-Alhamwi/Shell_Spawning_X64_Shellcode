@@ -33,3 +33,7 @@ If you prefer to work with the shellcode embedded directly within Python, you on
 #### Usage
 
 - Run `python3 spawn.py`
+
+## Note
+
+This repository is no longer actively maintained.
